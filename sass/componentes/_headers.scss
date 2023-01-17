@@ -8,7 +8,7 @@
 }
 
 .nav--header ul {
-  display: flex;
+  display: none;
   padding-top: 35px;
   li {
     list-style: none;
@@ -18,10 +18,13 @@
     color: $color-variacion;
     @include titulos($Fuente1);
   }
+  @include media(desktop-s) {
+    display: flex; //se adapte a un desk small
+  }
 }
 
 .header__busqueda {
-  display: flex;
+  display: none;
   margin-left: auto;
   padding-top: 35px;
   &:hover {
@@ -35,5 +38,8 @@
   span {
     color: $color-variacion;
     @include titulos($Fuente1);
+  }
+  @include media(desktop-s) {
+    display: flex;
   }
 }
