@@ -2,7 +2,7 @@
   width: 100%; //por defecto para movil (que abarque el 100%)
   display: flex; //se ajuste a la pantalla
   flex-direction: column;
-  @include media(desktop-s) {
+  @include media(desktop-s) { //todo esto se aplicara si la pantalla es como minimo de una laptop pequeña
     height: 1200px;
     width: 1300px;
     margin: 0 auto; //alineado al centro
