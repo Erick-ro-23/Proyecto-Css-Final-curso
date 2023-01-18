@@ -1,0 +1,28 @@
+.sidebar--listado {
+  max-width: 300px;
+  padding: 20px; //tener un espacio en la parte superior como inferior
+  @include caja();
+  h3 {
+    @include font-size(20px);
+    @include titulos($Fuente2);
+  }
+  ul {
+    margin: 0; //para evitar que nos den espacios innecesarios
+    padding: 0; //igual
+  }
+  li {
+    padding: 10px 0; //tiene un separador entre cada uno de los contenedores
+    margin: 10px 0;
+    border-top: 1px solid #ccc;
+    list-style: none;
+  }
+  a {
+    display: flex;
+    padding: 10px 20px; //arriba y abajo respectivamente
+    color: $color-primario;
+  }
+  &__numero {
+    margin-right: 20px;
+    color: get-opasity($color-primario, 0.5);
+  }
+}
