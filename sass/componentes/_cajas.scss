@@ -6,6 +6,11 @@
 }
 
 .caja {
+  display: flex;
+  height: 100vh;
+  max-width: 100%;
+  height: auto;
+
   max-width: 430px;
   @include caja;
   &__contenido {
@@ -35,28 +40,49 @@
 
 .caja--con-fondo {
   display: block;
-  box-shadow: none;
   position: relative;
   overflow: hidden; //no queremos que la caja se extienda mas alla
   background-color: $color-primario;
+
+  @media (max-width: 480px) {
+    height: 280px;
+  }
+
   img {
     display: block;
-    max-width: 100%; //abarquen todo el contenedor
-    max-height: auto; // lo calcule autotomaticamente
+    width: 100%; //abarquen todo el contenedor
+    height: 100%; // lo calcule autotomaticamente
     position: absolute; //el texto este por encima de la imagen
     opacity: 0.5;
-    object-fit: contain; //abaruqe todo el contenedor de la caja grande
+    object-fit: cover; //abaruqe todo el contenedor de la caja grande
   }
   &__contenido {
-    padding: 20px;
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
     text-align: center;
     color: $color-claro;
+    span {
+      margin: 10px auto;
+      padding: 5px;
+    }
     p {
       color: $color-claro;
+      padding: 5px 20px;
+      @media (max-width: 1080px) {
+        display: none;
+      }
     }
-    h3 {
-      color: $color-claro;
+    h2 {
+      color: get-opacity($color-claro, 0.7);
+      @media (max-width: 1080px) {
+        @include font-size(20px);
+      }
     }
   }
   &__categoria {
@@ -69,19 +95,45 @@
     color: $color-claro;
     @include titulos($Fuente2);
   }
+  &__stats {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    color: get-opacity($color-claro, 0.7);
+
+    ul {
+      display: flex;
+      list-style: none;
+    }
+
+    li {
+      margin-right: 20px;
+    }
+  }
 }
 
 .caja--grande {
   max-width: 1000px;
   height: 550px;
   margin-right: 20px;
+  @media (max-width: 480px) {
+    height: 420px;
+  }
   h2 {
     @include titulos($Fuente2);
     @include font-size(50px);
+    @media (max-width: 1080px) {
+      @include font-size(25px);
+    }
+    @media (max-width: 770px) {
+      @include font-size(20px);
+    }
   }
-  .caja--con-fondo__contenido {
-    padding-top: 200px;
-  }
+  // .caja--con-fondo__contenido {
+  //   padding-top: 200px;
+  // }
 }
 
 .caja--mediana {
