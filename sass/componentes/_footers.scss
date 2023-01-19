@@ -9,11 +9,16 @@
 .nav--footer ul {
   display: flex;
   padding-top: 35px;
+
+  @media (max-width: 770px) {
+    display: none;
+  }
   li {
     list-style: none;
     margin-right: 50px;
   }
   a {
+    text-decoration: none;
     color: $color-claro;
     @include titulos($Fuente2);
   }
@@ -21,6 +26,10 @@
 
 .nav--social {
   margin-left: auto; //alineado a la derecha
+  @media (max-width: 770px) {
+    display: none;
+  }
+
   ul {
     display: flex;
     padding-top: 35px;
@@ -34,4 +43,7 @@
     color: $color-claro;
     @include titulos($Fuente2);
   }
+  // @include media(desktop-s) {
+  //   display: flex; //se adapte a un desk small
+  // }
 }

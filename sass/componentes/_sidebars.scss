@@ -2,6 +2,11 @@
   max-width: 300px;
   padding: 20px; //tener un espacio en la parte superior como inferior
   @include caja();
+
+  @media (max-width: 480px) {
+    justify-self: center;
+  }
+
   h3 {
     @include font-size(20px);
     @include titulos($Fuente2);
@@ -16,11 +21,31 @@
     border-top: 1px solid #ccc;
     list-style: none;
   }
+  @media (min-width: 770px) and (max-width: 950px) {
+    li:last-child {
+      display: none;
+    }
+  }
+  @media (min-width: 480px) and (max-width: 700px) {
+    li:last-child {
+      display: none;
+    }
+  }
+
   a {
     display: flex;
     padding: 10px 20px; //arriba y abajo respectivamente
     color: $color-primario;
+
+    @media (min-width: 770px) and (max-width: 950px) {
+      padding: 5px 2px;
+    }
+
+    @media (min-width: 480px) and (max-width: 600px) {
+      padding: 5px 2px;
+    }
   }
+
   &__numero {
     margin-right: 20px;
     color: get-opasity($color-primario, 0.5);

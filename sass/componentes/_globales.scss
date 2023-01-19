@@ -48,6 +48,7 @@ $color-claro: #fff;
   @return rgba($color, $amount);
 }
 
+//loops
 @each $header, $size in (h1: 30px, h2: 25px, h3: 20px) {
   #{$header} {
     font-size: $size;
@@ -56,8 +57,13 @@ $color-claro: #fff;
   }
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  overflow-x: hidden;
   background-color: #f9fafc;
   color: $color-primario;
   @include titulos($Fuente1);
@@ -68,6 +74,10 @@ body {
 
 main {
   display: flex;
-  width: 100%;
-  height: 100vh;
+  width: 100vw;
+  height: 100%;
+  margin: 30px auto;
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
 }
